@@ -1,6 +1,6 @@
 # Learnify
 Learnify is a course management app where you can add your courses, see the details of courses and also buy them.
-Our database includes more than 17k courses in it.
+The database includes more than 17k courses in it.
 Anyone can access these courses irrespective of their age group.
 
 ## Key features of my app:-
@@ -23,4 +23,5 @@ Anyone can access these courses irrespective of their age group.
 3. Improved ML features.
 4. Actual readme of courses in course details part.
 
-### This is my very first app. Hope to make more with advanced features ahead.
+### This is my very first full fledged working app, although there is always a gateway for improvements. Hope to make more with advanced features ahead.
+## Happy learning;)
