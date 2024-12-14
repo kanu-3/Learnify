@@ -14,19 +14,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: LoginScreenmain(),
     );
   }
 }
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginScreenmain extends StatefulWidget {
+  const LoginScreenmain({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _LoginScreenmainState createState() => _LoginScreenmainState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenmainState extends State<LoginScreenmain> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -120,6 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                
                 Container(
                   height: 150, 
                   width: 150,  
@@ -127,28 +128,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     image: DecorationImage(image: AssetImage("assets/images/mainlogo.png"), fit: BoxFit.contain),
                   ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Log in',
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+               
+                Padding(
+                  padding: const EdgeInsets.only(left: 40), 
+                  child: const Text(
+                    'Log in',
+                    style: TextStyle(
+                      fontSize: 45,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
-                    const SizedBox(height: 5),
-                    const Text(
-                      'Welcome back!',
-                      style: TextStyle(
-                        fontSize: 36,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ],
             ),
@@ -281,7 +271,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         alignment: Alignment.centerLeft,
                         child: TextButton(
                           onPressed: () {
-                          
                           },
                           child: const Text(
                             'Forgot password?',

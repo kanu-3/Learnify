@@ -26,7 +26,7 @@ class CourseRecommendation {
 }
 
 Future<List<CourseRecommendation>> fetchRecommendations(Map<String, String> profileDetails) async {
-  final Uri url = Uri.parse('https://lms-recommend.onrender.com/recommend/'); // Replace with your actual API URL
+  final Uri url = Uri.parse('https://lms-recommend.onrender.com/recommend/'); 
 
   final response = await http.post(
     url,

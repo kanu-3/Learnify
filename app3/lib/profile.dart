@@ -74,7 +74,7 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       appBar: AppBar(
         title: Text("My Profile", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color.fromARGB(255, 133, 85, 217),
         elevation: 10,
       ),
       body: isLoading
@@ -91,7 +91,7 @@ class _ProfileState extends State<Profile> {
                           Center(
                             child: CircleAvatar(
                               radius: 75,
-                              backgroundImage: NetworkImage(profileData['userPhoto'] ?? 'https://via.placeholder.com/150'),
+                              backgroundImage: AssetImage("assets/images/profilepic.png"),
                             ),
                           ),
                           SizedBox(height: 20),
@@ -103,7 +103,7 @@ class _ProfileState extends State<Profile> {
                             ),
                             child: ListTile(
                               leading: Icon(Icons.person, color: Colors.deepPurple),
-                              title: Text("Name: ${profileData['fullName']}", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                              title: Text("Name: ${profileData['fullName']}", style: TextStyle(fontSize: 20)),
                             ),
                           ),
                           SizedBox(height: 10),
@@ -142,7 +142,18 @@ class _ProfileState extends State<Profile> {
                               title: Text("Date of Birth: ${profileData['dateOfBirth']}", style: TextStyle(fontSize: 18)),
                             ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: 10),
+                          Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: ListTile(
+                              leading: Icon(Icons.email, color: Colors.deepPurple),
+                              title: Text("About: ${profileData['description']}", style: TextStyle(fontSize: 18)),
+                            ),
+                          ),
+                          SizedBox(height: 10),
                         ],
                       ),
                     ),

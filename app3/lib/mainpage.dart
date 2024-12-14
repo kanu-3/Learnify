@@ -149,46 +149,32 @@ class MainpageContent extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
             
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: [
-                  Container(
-                        height: 55,
-                        child: OutlinedButton(
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
-                          },
-                          child: CircleAvatar(
-                            radius: 25,
-                            backgroundImage: NetworkImage(profileData != null ? profileData['userPhoto'] ?? '' : ''),
-                          ),
+            Row(
+              children: [
+                Container(
+                      height: 55,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
+                        },
+                        child: CircleAvatar(
+                          radius: 35,
+                          backgroundImage: AssetImage("assets/images/profilepic.png"),
                         ),
                       ),
-                      SizedBox(width: 8),
-                      Text(
-                        "Hello $fullName",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                    Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Recomend()));
-                        }, icon: Icon(Icons.more))
-                      ],
-                                        ),
                     ),
-                ],
-              ),
+                    SizedBox(width: 8),
+                    Text(
+                      "Hello $fullName",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+              ],
             ),
-            SizedBox(height: 16),
+            // SizedBox(height: 10),
             
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -199,7 +185,7 @@ class MainpageContent extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 10),
             Row(
               children: [
                 Icon(Icons.search),
@@ -224,7 +210,7 @@ class MainpageContent extends StatelessWidget {
                 autoPlay: true,
                 autoPlayInterval: Duration(seconds: 3),
                 enlargeCenterPage: true,
-                aspectRatio: 16 / 9,
+                aspectRatio: 17 / 9,
                 viewportFraction: 0.8,
               ),
               items: List.generate(
@@ -254,13 +240,18 @@ class MainpageContent extends StatelessWidget {
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      CircleAvatar(
-                        radius: 30, 
-                        backgroundColor: const Color.fromARGB(255, 207, 126, 231),
-                        child: Icon(
-                          Icons.web, 
-                          size: 30, 
-                          color: Colors.white,
+                      InkWell(
+                        onTap: (){
+
+                        },
+                        child: CircleAvatar(
+                          radius: 30, 
+                          backgroundColor: const Color.fromARGB(255, 207, 126, 231),
+                          child: Icon(
+                            Icons.web, 
+                            size: 30, 
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       SizedBox(height: 8), 
@@ -270,13 +261,18 @@ class MainpageContent extends StatelessWidget {
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor:const Color.fromARGB(255, 207, 126, 231),
-                        child: Icon(
-                          Icons.apps, 
-                          size: 30,
-                          color: Colors.white,
+                      InkWell(
+                        onTap: (){
+
+                        },
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundColor:const Color.fromARGB(255, 207, 126, 231),
+                          child: Icon(
+                            Icons.apps, 
+                            size: 30,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       SizedBox(height: 8),
@@ -286,13 +282,18 @@ class MainpageContent extends StatelessWidget {
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: const Color.fromARGB(255, 207, 126, 231),
-                        child: Icon(
-                          Icons.design_services, 
-                          size: 30,
-                          color: Colors.white,
+                      InkWell(
+                        onTap: (){
+
+                        },
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundColor: const Color.fromARGB(255, 207, 126, 231),
+                          child: Icon(
+                            Icons.design_services, 
+                            size: 30,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       SizedBox(height: 8),
@@ -302,13 +303,18 @@ class MainpageContent extends StatelessWidget {
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: const Color.fromARGB(255, 207, 126, 231),
-                        child: Icon(
-                          Icons.computer, 
-                          size: 30,
-                          color: Colors.white,
+                      InkWell(
+                        onTap: (){
+
+                        },
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundColor: const Color.fromARGB(255, 207, 126, 231),
+                          child: Icon(
+                            Icons.computer, 
+                            size: 30,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       SizedBox(height: 8),
@@ -328,6 +334,13 @@ class MainpageContent extends StatelessWidget {
                     'All courses',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Recomend()));
+                    },child: Text("Recommended courses",style: TextStyle(color: Colors.red,fontSize: 15,fontWeight: FontWeight.bold
+                    ),),
+                  )
+                  
                 ],
               ),
             ),
@@ -357,42 +370,42 @@ class MainpageContent extends StatelessWidget {
               ),
             ),
 
-            Container(
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.purple[50],
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.play_circle, color: Colors.red),
-                      SizedBox(width: 10),
-                      Text(
-                        'UI/UX Designer',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  Text('Google', style: TextStyle(color: Colors.grey)),
-                  SizedBox(height: 10),
-                  Text(
-                    'Basics of Figma',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('2 hours', style: TextStyle(color: Colors.grey)),
-                      Text('\$ 29.99', style: TextStyle(color: Colors.green)),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            // Container(
+            //   padding: EdgeInsets.all(16),
+            //   decoration: BoxDecoration(
+            //     color: Colors.purple[50],
+            //     borderRadius: BorderRadius.circular(16),
+            //   ),
+            //   child: Column(
+            //     crossAxisAlignment: CrossAxisAlignment.start,
+            //     children: [
+            //       Row(
+            //         children: [
+            //           Icon(Icons.play_circle, color: Colors.red),
+            //           SizedBox(width: 10),
+            //           Text(
+            //             'UI/UX Designer',
+            //             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            //           ),
+            //         ],
+            //       ),
+            //       Text('Google', style: TextStyle(color: Colors.grey)),
+            //       SizedBox(height: 10),
+            //       Text(
+            //         'Basics of Figma',
+            //         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            //       ),
+            //       SizedBox(height: 10),
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Text('2 hours', style: TextStyle(color: Colors.grey)),
+            //           Text('\$ 29.99', style: TextStyle(color: Colors.green)),
+            //         ],
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -409,7 +422,7 @@ class MainpageContent extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(image, height: 200, width: 420),
+          Image.asset(image, height: 200, width: 440),
           SizedBox(height: 10),
           Text(text, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         ],

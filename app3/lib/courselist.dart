@@ -240,7 +240,7 @@ class CourseDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(course.title),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: const Color.fromARGB(255, 136, 90, 215),
       ),
       body: SingleChildScrollView(
         child: Padding(
