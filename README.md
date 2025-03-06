@@ -6,7 +6,7 @@ Anyone can access these courses irrespective of their age group.
 ## Key features of my app:-
 ### Database 
 1. Dynamic log in and sign up features.
-2. Course list anf their details.
+2. Course list and their details.
 ### Machine learning
 1. Assistant- helps in choosing the best course.
 2. Course reommendation system based on your interests, goals and specialization.
